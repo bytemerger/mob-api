@@ -11,7 +11,13 @@ class Db
     public function __construct()
     {
         $config = Config::get();
-        $this->db = new \PDO($config['dsn'],$config['user'],$config['password']);
+        try {
+            $this->db = new \PDO($config['dsn'],$config['user'],$config['password']);
+        }
+        catch (\PDOException $e)
+        {
+            exit($e->getMessage());
+        }
     }
 
     public function getDb(){
