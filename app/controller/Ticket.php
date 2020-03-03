@@ -3,6 +3,7 @@
 
 namespace App\controller;
 
+header('content-type: application/json');
 
 class Ticket
 {

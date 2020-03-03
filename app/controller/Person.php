@@ -4,7 +4,7 @@
 namespace App\controller;
 
 use App\model\Persons;
-
+header('content-type: application/json');
 class Person
 {
     //function to get the list of persons
