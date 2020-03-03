@@ -18,4 +18,13 @@ $klein->respond('GET','/ticket/person/[:id]',function ($request){
     $ticket = new App\controller\Ticket();
     $ticket->ticketHist($request->id);
 });
+$klein->onHttpError(function ($code, $router) {
+    if ($code >= 400 && $code < 500) {
+        $router->response()->body(
+            'Oh no, a bad error happened that caused a '. $code
+        );
+    } elseif ($code >= 500 && $code <= 599) {
+        error_log('uhhh, something bad happened');
+    }
+});
 $klein->dispatch();
