@@ -10,8 +10,8 @@ class Config
     {
         return(array(
             'dsn'=>'mysql:host=localhost;dbname=dms_sample',
-            'user'=>'franc',
-            'password'=>'come1234'
+            'user'=>'----',
+            'password'=>'-----'
         ));
     }
 
